@@ -1,0 +1,335 @@
+/*
+ * Licensed to the Apache Software Foundation (ASF) under one
+ * or more contributor license agreements.  See the NOTICE file
+ * distributed with this work for additional information
+ * regarding copyright ownership.  The ASF licenses this file
+ * to you under the Apache License, Version 2.0 (the
+ * "License"); you may not use this file except in compliance
+ * with the License.  You may obtain a copy of the License at
+ *
+ * http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing,
+ * software distributed under the License is distributed on an
+ * "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+ * KIND, either express or implied.  See the License for the
+ * specific language governing permissions and limitations
+ * under the License.
+ */
+
+
+body {
+
+    background-color: #F8CB96;
+
+    background-attachment: fixed;
+    font-family: 'HelveticaNeue-Light', 'HelveticaNeue', Helvetica, Arial, sans-serif;
+    font-size: 15px;
+    height: 100%;
+    margin: 0px;
+    padding: 0px;
+    width: 100%;
+    margin-top: 60px;
+}
+
+
+/* Landscape layout (with min-width) */
+@media screen and (min-aspect-ratio: 1/1) and (min-width:400px) {
+    .app {
+        background-position: left center;
+        padding: 75px 0px 75px 170px;
+        /* padding-top + padding-bottom + text area = image height */
+        margin: -90px 0px 0px -198px;
+        /* offset vertical: half of image height */
+        /* offset horizontal: half of image width and text area width */
+    }
+}
+
+/*
+section {
+    height: 900px;
+}*/
+
+#iframeradio {
+    margin-top: -60px;
+    height: 800px;
+}
+
+
+.accordion {
+    background-color: #F8CB96;
+    color: #444;
+    cursor: pointer;
+    width: 100%;
+    outline: none;
+    transition: 0.4s;
+    text-align: center;
+    padding-top: 60px;
+    border-style:none;
+
+}
+
+.panel {
+    padding: 0 18px;
+    background-color: #F8CB96;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.2s ease-out;
+    text-align: center;
+    
+
+}
+
+.espace{
+    padding:60px;
+}
+
+#NomAsso {
+    font-weight: bold;
+    color: #F8CB96;
+    text-transform: uppercase;
+    padding: 15px;
+
+}
+.images_partenaires
+{
+    text-align: center;
+    padding-top:30px;
+ 
+
+}
+
+i2 {
+    border: solid #F8CB96;
+    border-width: 0 5px 5px 0;
+    display: inline-block;
+    padding: 3px;
+    color: #F8CB96;
+    position: absolute;
+    left: 30px;
+    top: 18px;
+}
+
+fleched {
+    border: solid #75292F;
+    border-width: 0 2px 2px 0;
+    padding: 4px;
+    position:absolute;
+    margin-top: 6px;
+    right:15px;
+    opacity: 0.5;
+    color: #75292F;
+    
+
+   
+    
+}
+.left {
+    transform: rotate(135deg);
+    -webkit-transform: rotate(135deg);
+}
+
+.right {
+    transform: rotate(-45deg);
+    -webkit-transform: rotate(-45deg);
+}
+
+
+#BanniereHaute {
+    width: 100%;
+    background-color: #BB4952;
+    box-shadow: inset 0 -15px 35px rgba(248, 203, 150, 0.4);
+    position: fixed;
+    top: 0px;
+    z-index: 10;
+    text-align: center;
+
+
+
+
+}
+
+h3 {
+    text-transform: none;
+    text-align: center;
+    font-family: 'Didot';
+}
+
+h4 {
+    font-family: 'Didot';
+    text-decoration: none;
+    text-transform: none;
+    text-align: center;
+    margin-left: 2%;
+    margin-right: 2%;
+}
+h5{
+    text-align:center;
+}
+.PremierParagraphe {
+    margin-left: 0px;
+    text-align: center;
+}
+
+#MenuBas {
+    background-color: #BB4952;
+    display: flex;
+    text-transform: uppercase;
+    box-shadow: inset 0 15px 35px rgba(248, 203, 150, 0.2);
+
+}
+
+footer {
+    width: 100%;
+    position: fixed;
+    bottom: 0px;
+    z-index: 9;
+}
+
+#MenuBas {
+    width: 100%;
+    background-color: #BB4952;
+    z-index: 11;
+    font-size: 0.8em;
+    text-transform: uppercase;
+    text-decoration: none;
+    font-family: monospace, serif;
+    position: fixed;
+    bottom: 0px;
+}
+
+#MenuBas a {
+    /*float: left;*/
+    padding: 8px;
+    color: #F8CB96;
+    text-decoration: none;
+    text-align: center;
+    width: 100%;
+}
+
+#MenuBas a:active {
+    color: #75292F;
+}
+
+
+.event {
+    border-radius: 4px;
+    -webkit-border-radius: 4px;
+    color: #FFFFFF;
+    font-size: 12px;
+    margin: 0px 30px;
+    padding: 2px 0px;
+}
+
+.radioecole {
+    margin-top: 7px;
+    text-transform: none;
+}
+
+.btn {
+    background-color: #BB4952;
+    color: #F8CB96;
+}
+
+.btnEtp {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.probecoute {
+    text-decoration: none;
+    color: #75292F;
+    text-transform: uppercase;
+    font-size: 1.3em;
+    text-decoration: underline;
+}
+
+.pecoute {
+    text-align: center;
+    font-size: 0.9em;
+}
+
+section p {
+    margin-left: 3%;
+
+}
+
+.menu-vertical {
+    width: 100%;
+    overflow: auto;
+
+
+}
+
+.menu-vertical a {
+    display: block;
+    padding: 12px;
+    text-decoration: none;
+    color: #75292F;
+    font-size: 1.3em;
+   /* border-left: 1px groove grey;*/
+    border-bottom: 0.1px ridge grey;
+    margin-left:10px;
+   /* margin-bottom: 5px;*/
+    padding-left: 17px;
+ 
+
+}
+
+.menu-vertical a:active {
+    background-color: #F5BA60;
+}
+
+.Podcasts {
+    height: 20px;
+    width: 90%;
+
+}
+
+.CentrerPodcasts {
+    text-align: center;
+}
+
+.event.listening {
+    background-color: #333333;
+    display: block;
+}
+
+.event.received {
+    background-color: #4B946A;
+    display: none;
+}
+
+@keyframes fade {
+    from {
+        opacity: 1.0;
+    }
+
+    50% {
+        opacity: 0.4;
+    }
+
+    to {
+        opacity: 1.0;
+    }
+}
+
+@-webkit-keyframes fade {
+    from {
+        opacity: 1.0;
+    }
+
+    50% {
+        opacity: 0.4;
+    }
+
+    to {
+        opacity: 1.0;
+    }
+}
+
+.blink {
+    animation: fade 3000ms infinite;
+    -webkit-animation: fade 3000ms infinite;
+}

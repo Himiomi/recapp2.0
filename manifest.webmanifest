@@ -1,0 +1,15 @@
+{
+  "background_color": "purple",
+  "description": "Site de recapp.",
+  "display": "fullscreen",
+  "icons": [
+    {
+      "src": "img/logo.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    }
+  ],
+  "name": "RecApp",
+  "short_name": "RecApp",
+  "start_url": "index.html"
+}
