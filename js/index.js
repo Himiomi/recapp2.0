@@ -57,14 +57,12 @@ document.addEventListener('deviceready', function () {
     .endInit();
 }, false);
 
-
-// Code to handle install prompt on desktop
+prompt("hello");
 
 let deferredPrompt;
 const addBtn = document.querySelector('.add-button');
 
 window.addEventListener('beforeinstallprompt', (e) => {
-	prompt("hello");
   // Prevent Chrome 67 and earlier from automatically showing the prompt
   e.preventDefault();
   // Stash the event so it can be triggered later.
@@ -73,6 +71,8 @@ window.addEventListener('beforeinstallprompt', (e) => {
   addBtn.style.display = 'block';
 
   addBtn.addEventListener('click', () => {
+    // hide our user interface that shows our A2HS button
+    addBtn.style.display = 'none';
     // Show the prompt
     deferredPrompt.prompt();
     // Wait for the user to respond to the prompt
@@ -86,5 +86,4 @@ window.addEventListener('beforeinstallprompt', (e) => {
     });
   });
 });
-
 app.initialize();
