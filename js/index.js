@@ -16,7 +16,7 @@
  * specific language governing permissions and limitations
  * under the License.
  */
-var Version="1.2"
+var Version="1.3"
 var app = {
     // Application Constructor
     initialize: function() {
@@ -65,7 +65,7 @@ const addBtn = document.querySelector('.add-button');
 
 window.addEventListener('beforeinstallprompt', (e) => {
 	
-  alert("");
+  alert("hello 2");
   // Prevent Chrome 67 and earlier from automatically showing the prompt
   e.preventDefault();
   // Stash the event so it can be triggered later.
@@ -89,4 +89,5 @@ window.addEventListener('beforeinstallprompt', (e) => {
     });
   });
 });
+
 app.initialize();

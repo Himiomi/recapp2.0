@@ -11,5 +11,5 @@
   ],
   "name": "RecApp",
   "short_name": "RecApp",
-  "start_url": "index.html"
+  "start_url": "/index.html"
 }
