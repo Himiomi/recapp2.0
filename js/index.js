@@ -44,6 +44,14 @@ var app = {
     }
 };
 
+// Register service worker to control making site work offline
+
+if ('serviceWorker' in navigator) {
+  navigator.serviceWorker
+    .register('/reacapp2.0/js/sw.js')
+    .then(() => { console.log('Service Worker Registered'); });
+}
+
 document.addEventListener('deviceready', function () {
   // Enable to debug issues.
   // window.plugins.OneSignal.setLogLevel({logLevel: 4, visualLevel: 4});
