@@ -196,7 +196,7 @@ footer {
     font-family: monospace, serif;
     position: fixed;
     bottom: 0px;
-}
+	}
 
 #MenuBas a {
     /*float: left;*/
@@ -205,11 +205,23 @@ footer {
     text-decoration: none;
     text-align: center;
     width: 100%;
+	top: 50%;
 }
 
-#MenuBas a:active {
-    color: #75292F;
+#MenuBas Button {
+    /*float: left;*/
+    padding: 8px;
+    color: #F8CB96;
+	background-color: #BB4952;
+    text-decoration: none;
+    text-align: center;
+    width: 100%;
+    text-transform: uppercase;
+    text-decoration: none;
+    font-family: monospace, serif;
+    line-height: 3px;
 }
+
 
 
 .event {

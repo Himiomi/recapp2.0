@@ -37,7 +37,6 @@ if ('serviceWorker' in navigator) {
     .endInit();
 }, false);
 */
-alert(Version);
 
 let deferredPrompt;
 const addBtn = document.querySelector('.add-button');
