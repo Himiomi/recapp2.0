@@ -19,7 +19,7 @@
 var Version="1.5"
 if ('serviceWorker' in navigator) {
   navigator.serviceWorker
-    .register('/recapp2.0/js/sw.js')
+    .register('/recapp2.0/sw.js')
     .then(() => { console.log('Service Worker Registered'); });
 }
 
