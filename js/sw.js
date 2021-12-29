@@ -29,7 +29,7 @@ self.addEventListener('install', (e) => {
       '/recapp2.0/radio.html',
       '/recapp2.0/reglages.html',
       '/recapp2.0/terms&conditions.html',
-      '/recapp2.0/video.html'
+      '/recapp2.0/video.html',
     ])),
   );
 });
