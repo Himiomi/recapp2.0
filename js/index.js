@@ -48,7 +48,7 @@ var app = {
 
 if ('serviceWorker' in navigator) {
   navigator.serviceWorker
-    .register('/reacapp2.0/js/sw.js')
+    .register('/recapp2.0/js/sw.js')
     .then(() => { console.log('Service Worker Registered'); });
 }
 
