@@ -16,7 +16,7 @@
  * specific language governing permissions and limitations
  * under the License.
  */
-var Version="1.6"
+var Version="1.7"
 if ('serviceWorker' in navigator) {
   navigator.serviceWorker
     .register('/recapp2.0/sw.js')
