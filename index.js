@@ -23,32 +23,20 @@ if ('serviceWorker' in navigator) {
     .then(() => { console.log('Service Worker Registered'); });
 }
 
-document.addEventListener('deviceready', function () {
-  // Enable to debug issues.
-  // window.plugins.OneSignal.setLogLevel({logLevel: 4, visualLevel: 4});
-  
-  var notificationOpenedCallback = function(jsonData) {
-    console.log('notificationOpenedCallback: ' + JSON.stringify(jsonData));
-  };
-
-  window.plugins.OneSignal
-    .startInit("d3ea06dd-07cc-47cd-ac3e-e012ea3efe1a")
-    .handleNotificationOpened(notificationOpenedCallback)
-    .endInit();
-}, false);
-
-
 let deferredPrompt;
 const addBtn = document.querySelector('.add-button');
 
 window.addEventListener('beforeinstallprompt', (e) => {
-	
   // Prevent Chrome 67 and earlier from automatically showing the prompt
   e.preventDefault();
   // Stash the event so it can be triggered later.
   deferredPrompt = e;
+  // Update UI to notify the user they can add to home screen
+  addBtn.style.display = 'block';
 
   addBtn.addEventListener('click', () => {
+    // hide our user interface that shows our A2HS button
+    addBtn.style.display = 'none';
     // Show the prompt
     deferredPrompt.prompt();
     // Wait for the user to respond to the prompt
@@ -62,5 +50,3 @@ window.addEventListener('beforeinstallprompt', (e) => {
     });
   });
 });
-
-
