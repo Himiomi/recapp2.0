@@ -24,7 +24,7 @@ if ('serviceWorker' in navigator) {
 }
 
 let deferredPrompt;
-const addBtn = document.querySelector('.add-button');
+const addBtn = document.getElementById("add-button");
 
 window.addEventListener('beforeinstallprompt', (e) => {
   // Prevent Chrome 67 and earlier from automatically showing the prompt
@@ -33,7 +33,8 @@ window.addEventListener('beforeinstallprompt', (e) => {
   deferredPrompt = e;
   // Update UI to notify the user they can add to home screen
   addBtn.style.display = 'block';
-  alert("PASSAGE");document.getElementById("add-button").addEventListener('click', () => {
+  alert("PASSAGE");
+  document.getElementById("add-button").addEventListener('click', () => {
     // Show the prompt
     deferredPrompt.prompt();
     // Wait for the user to respond to the prompt
