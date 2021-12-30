@@ -62,3 +62,5 @@ window.addEventListener('beforeinstallprompt', (e) => {
     });
   });
 });
+
+
