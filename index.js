@@ -47,63 +47,21 @@ window.addEventListener('beforeinstallprompt', (e) => {
   });
 });
 
-let swRegistration = null;
-
-function initializeApp() {
-  if ("serviceWorker" in navigator && "PushManager" in window) {
-    console.log("Service Worker and Push is supported");
-
-    //Register the service worker
-    navigator.serviceWorker
-      .register("/recapp2.0/sw.js")
-      .then(swReg => {
-        console.log("Service Worker is registered", swReg);
-
-        swRegistration = swReg;
-        initializeUi();
-      })
-      .catch(error => {
-        console.error("Service Worker Error", error);
-      });
-  } else {
-    console.warn("Push messaging is not supported");
-    notificationButton.textContent = "Push Not Supported";
-  }
-}
-
-
-function initializeUi() {
-   document.getElementById("enableNotifications").addEventListener("click", () => {
-    displayNotification();
+function askForNPerm() {
+  Notification.requestPermission(function(result) {
+    console.log("User choice", result);
+    if (result !== "granted") {
+      console.log("No notification permission granted!");
+    } else {
+      configurePushSub();// Write your custom function that pushes your message
+    }
   });
 }
+askForNPerm();
+document.getElementById("enableNotifications").addEventListener("click", () => {
+    navigator.serviceWorker.getRegistration("/recapp2.0/").then(reg => {
+   console.log("About to show notification", reg);
+   reg.showNotification("Hello world!");
+  });
 
-function displayNotification() {
-  if (window.Notification && Notification.permission === "granted") {
-    notification();
-  }
-  // If the user hasn't told if he wants to be notified or not
-  // Note: because of Chrome, we are not sure the permission property
-  // is set, therefore it's unsafe to check for the "default" value.
-  else if (window.Notification && Notification.permission !== "denied") {
-    Notification.requestPermission(status => {
-      if (status === "granted") {
-        notification();
-      } else {
-        alert("You denied or dismissed permissions to notifications.");
-      }
-    });
-  } else {
-    // If the user refuses to get notified
-    alert(
-      "You denied permissions to notifications. Please go to your browser or phone setting to allow notifications."
-    );
-  }
-}
-
-function notification() {
-  const options = {
-    body: "Testing Our Notification",
-  };
-  swRegistration.showNotification("PWA Notification!", options);
-}
+  });
