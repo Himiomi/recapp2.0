@@ -53,15 +53,14 @@ function askForNPerm() {
     if (result !== "granted") {
       console.log("No notification permission granted!");
     } else {
-      configurePushSub();// Write your custom function that pushes your message
-    }
-  });
-}
-askForNPerm();
-document.getElementById("enableNotifications").addEventListener("click", () => {
+    document.getElementById("enableNotifications").addEventListener("click", () => {
     navigator.serviceWorker.getRegistration("/recapp2.0/").then(reg => {
    console.log("About to show notification", reg);
    reg.showNotification("Hello world!");
   });
 
   });
+    }
+  });
+}
+askForNPerm();
