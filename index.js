@@ -47,6 +47,8 @@ window.addEventListener('beforeinstallprompt', (e) => {
   });
 });
 
+
+
 function askForNPerm() {
   Notification.requestPermission(function(result) {
     console.log("User choice", result);
@@ -54,14 +56,14 @@ function askForNPerm() {
       console.log("No notification permission granted!");
     } else {
           document.getElementById("enableNotifications").addEventListener("click", () => {
-          navigator.serviceWorker.getRegistration("/recapp2.0/").then(reg => {
-         console.log("About to show notification", reg);
-         reg.showNotification("Hello world!");
-        });
+            var notification = new Notification('He, la radio viens de se lancer', {body: 'Voir l\'émission'});
+            notification.onclick = function () {
+                                  window.open("https://hikachhu.github.io/recapp2.0/radio.html/");
+                                  };
 
         });
     }
-  });
-}
+  
+  })}
 askForNPerm();
 //useless commit
