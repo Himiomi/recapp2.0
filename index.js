@@ -47,25 +47,20 @@ window.addEventListener('beforeinstallprompt', (e) => {
   });
 });
 
-function notifClick(){
-             var notification = new Notification('He, la radio viens de se lancer', {body: 'Voir l\'émission'});
-            notification.onclick = function () {
-                                  window.open("https://hikachhu.github.io/recapp2.0/radio.html");
-                                  }; 
-}
-
-
 function askForNPerm() {
   Notification.requestPermission(function(result) {
     console.log("User choice", result);
     if (result !== "granted") {
       console.log("No notification permission granted!");
     } else {
-          document.getElementById("enableNotifications").addEventListener("click", () => {
-          notifClick();
+document.getElementById("enableNotifications").addEventListener("click", () => {
+            var notification = new Notification('He, la radio viens de se lancer', {body: 'Voir la radio'});
+            notification.onclick = function () {
+                                  window.open("https://hikachhu.github.io/recapp2.0/radio.html");
+                                  }; 
 
         });
     }
-  
-  })}
+  });
+}
 askForNPerm();
