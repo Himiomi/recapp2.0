@@ -53,14 +53,15 @@ function askForNPerm() {
     if (result !== "granted") {
       console.log("No notification permission granted!");
     } else {
-    document.getElementById("enableNotifications").addEventListener("click", () => {
-    navigator.serviceWorker.getRegistration("/recapp2.0/").then(reg => {
-   console.log("About to show notification", reg);
-   reg.showNotification("Hello world!");
-  });
+          document.getElementById("enableNotifications").addEventListener("click", () => {
+          navigator.serviceWorker.getRegistration("/recapp2.0/").then(reg => {
+         console.log("About to show notification", reg);
+         reg.showNotification("Hello world!");
+        });
 
-  });
+        });
     }
   });
 }
 askForNPerm();
+//useless commit
