@@ -47,9 +47,7 @@ window.addEventListener('beforeinstallprompt', (e) => {
   });
 });
 
-const notificationButton = document.getElementById("enableNotifications");
 let swRegistration = null;
-
 
 function initializeApp() {
   if ("serviceWorker" in navigator && "PushManager" in window) {
@@ -75,7 +73,7 @@ function initializeApp() {
 
 
 function initializeUi() {
-  notificationButton.addEventListener("click", () => {
+   document.getElementById("enableNotifications").addEventListener("click", () => {
     displayNotification();
   });
 }
